@@ -1,0 +1,10 @@
+name: Contexts
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }} # context によっては特殊文字が含まれるため、環境変数経由で参照することが推奨される
+    steps:
+      - run: echo "${ACTOR}" # 環境変数経由で github コンテキストのプロパティを参照
+      - run: echo "${GITHUB_ACTOR}"     # デフォルト環境変数経由での参照
