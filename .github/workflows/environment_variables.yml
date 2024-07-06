@@ -10,6 +10,3 @@ jobs:
       - env:
           EXAMPLE: Defined by step level
         run: echo "${EXAMPLE}"
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ env.EXAMPLE }}
