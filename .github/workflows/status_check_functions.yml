@@ -1,0 +1,9 @@
+name: Status check functions
+on: push
+jobs:
+  success:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "success"
+      - run: echo "Before step succeeded"
+        if: ${{ success() }}
